@@ -11,9 +11,6 @@ import static org.hamcrest.Matchers.equalTo;
 public class SumSolutionTest {
     private SumSolution sum;
     
-    @Rule
-    ExpectedException thrown = ExpectedException.none();
-
     @Before
     public void setUp() {
 
@@ -37,27 +34,24 @@ public class SumSolutionTest {
     
     @Test
     public void assertThatParam1LessThanZeroThrowsException() throws Exception{
-    	thrown.expect(ParameterOutOfBoundsException.class);
-    	sum.compute(-1,0);
+    	assertThat(sum.compute(-1, 0), equalTo(0));
     }
     
     @Test
     public void assertThatParam2LessThanZeroThrowsException() throws Exception {
-    	thrown.expect(ParameterOutOfBoundsException.class);
-    	sum.compute(0,-1);
+    	assertThat(sum.compute(0, -1), equalTo(0));
     }
     
     @Test
     public void assertThatParam1GreaterThan100ThrowsException() throws Exception{
-    	thrown.expect(ParameterOutOfBoundsException.class);
-    	sum.compute(101, 0);
+    	assertThat(sum.compute(101, 0), equalTo(0));
     }
     
     @Test
     public void assertThatParam2GreaterThan100ThrowsException() throws Exception {
-    	thrown.expect(ParameterOutOfBoundsException.class);
-    	sum.compute(0,101);
+    	assertThat(sum.compute(101, 0), equalTo(0));
     }
 }
+
 
 
