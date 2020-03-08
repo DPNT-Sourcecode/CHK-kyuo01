@@ -25,6 +25,7 @@ public class CheckoutSolution {
     			break;
     		case('E'):
     			total+=40;
+    			countE++;
     			break;
     		default:
     			return -1;
@@ -33,6 +34,7 @@ public class CheckoutSolution {
 
     	total -= calculateItemLevelDiscountForA(countA);
     	total -= calculateItemLevelDiscountForB(countB);
+    	total -= calculateItemLevelDiscountForEAndB(countB, countE);
     	
         return total;
     }
@@ -54,7 +56,16 @@ public class CheckoutSolution {
     }
     
     private int calculateItemLevelDiscountForEAndB(int countB, int countE) {
+    	if (countE>=2) {
+    		int multiplier = countE / 2;
+    		if (countB > multiplier || countB == multiplier) {
+    			return multiplier * 30;
+    		} else {
+    			return countB * 30;
+    		}
+    	}
     	return 0;
     }
 }
+
 
