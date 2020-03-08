@@ -14,7 +14,3 @@ public class HelloSolution {
     	return builder.toString();
     }
 }
-
-
-
-
