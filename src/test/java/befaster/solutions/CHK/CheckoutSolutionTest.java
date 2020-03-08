@@ -56,4 +56,35 @@ public class CheckoutSolutionTest {
 		String basket = "BBBB";
 		assertThat(checkout.checkout(basket), equalTo(90));
 	}
+	
+	@Test
+	public void assertThat2ECosts80() {
+		String basket = "EE";
+		assertThat(checkout.checkout(basket), equalTo(80));
+	}
+	
+	@Test
+	public void assertThat2EAndBCosts80() {
+		String basket = "BEE";
+		assertThat(checkout.checkout(basket), equalTo(80));
+	}
+	
+	@Test
+	public void assertThat4Eand2BCosts160() {
+		String basket = "BBEEEE";
+		assertThat(checkout.checkout(basket), equalTo(160));
+	}
+	
+	@Test
+	public void assertThat4EAnd3BCosts190() {
+		String basket = "BBBEEEE";
+		assertThat(checkout.checkout(basket), equalTo(190));
+	}
+	
+	@Test
+	public void assertThat2EAnd2BCosts110() {
+		String basket = "BBEE";
+		assertThat(checkout.checkout(basket), equalTo(110));
+	}
 }
+
