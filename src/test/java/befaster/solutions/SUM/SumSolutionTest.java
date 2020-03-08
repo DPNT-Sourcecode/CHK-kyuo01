@@ -50,7 +50,3 @@ public class SumSolutionTest {
     	assertThat(sum.compute(101, 0), equalTo(0));
     }
 }
-
-
-
-
