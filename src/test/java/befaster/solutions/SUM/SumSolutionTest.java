@@ -1,12 +1,10 @@
 package befaster.solutions.SUM;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class SumSolutionTest {
     private SumSolution sum;
@@ -52,6 +50,7 @@ public class SumSolutionTest {
     	assertThat(sum.compute(101, 0), equalTo(0));
     }
 }
+
 
 
 
