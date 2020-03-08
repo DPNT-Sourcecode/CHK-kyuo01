@@ -93,6 +93,3 @@ public class CheckoutSolutionTest {
 		assertThat(checkout.checkout(basket), equalTo(110));
 	}
 }
-
-
-
