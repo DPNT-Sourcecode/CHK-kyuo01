@@ -40,6 +40,12 @@ public class CheckoutSolutionTest {
 	}
 	
 	@Test
+	public void assertThat5ACosts200() {
+		String basket = "AAAAA";
+		assertThat(checkout.checkout(basket), equalTo(200));
+	}
+	
+	@Test
 	public void assertThat2BCosts45() {
 		String basket = "BB";
 		assertThat(checkout.checkout(basket), equalTo(45));
@@ -87,4 +93,5 @@ public class CheckoutSolutionTest {
 		assertThat(checkout.checkout(basket), equalTo(110));
 	}
 }
+
 
