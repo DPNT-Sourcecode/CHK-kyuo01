@@ -2,7 +2,9 @@ package befaster.solutions.CHK;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-    	int countA=0, countB=0; // counters for discount items
+    	int countA=0;
+    	int countB=0;
+    	int countE=0; // counters for discount items
     	int total=0;
     	
     	for (int i=0; i<skus.length(); i++) {
@@ -21,20 +23,38 @@ public class CheckoutSolution {
     		case ('D'):
     			total+=15;
     			break;
+    		case('E'):
+    			total+=40;
+    			break;
     		default:
     			return -1;
     		}
     	}
-    	
-    	if (countA>=3) {
-    		int multiplier = countA / 3;
-    		total=(total - (20 * multiplier));
-    	}
-    	if (countB>=2) {
-    		int multiplier = countB / 2;
-    		total = total - (15 * multiplier);
-    	}
+
+    	total -= calculateItemLevelDiscountForA(countA);
+    	total -= calculateItemLevelDiscountForB(countB);
     	
         return total;
     }
+    
+    private int calculateItemLevelDiscountForA(int countA) {
+    	if (countA>=3) {
+    		int multiplier = countA / 3;
+    		return (20 * multiplier);
+    	}
+    	return 0;
+    }
+    
+    private int calculateItemLevelDiscountForB(int countB) {
+    	if (countB>=2) {
+    		int multiplier = countB / 2;
+    		return (15 * multiplier);
+    	}
+    	return 0;
+    }
+    
+    private int calculateItemLevelDiscountForEAndB(int countB, int countE) {
+    	return 0;
+    }
 }
+
