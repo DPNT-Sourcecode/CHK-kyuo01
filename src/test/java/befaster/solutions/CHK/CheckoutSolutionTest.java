@@ -14,5 +14,36 @@ public class CheckoutSolutionTest {
 		String basket = "A";
 		assertThat(checkout.checkout(basket), equalTo(50));
 	}
+	
+	@Test
+	public void assertThatOneBCosts30() {
+		String basket = "B";
+		assertThat(checkout.checkout(basket), equalTo(30));
+	}
+
+	@Test
+	public void assertThatOneCCosts20() {
+		String basket = "C";
+		assertThat(checkout.checkout(basket), equalTo(20));
+	}
+	
+	@Test
+	public void assertThatOneDCosts15() {
+		String basket = "D";
+		assertThat(checkout.checkout(basket), equalTo(15));
+	}
+	
+	@Test
+	public void assertThat3ACosts130() {
+		String basket = "AAA";
+		assertThat(checkout.checkout(basket), equalTo(130));
+	}
+	
+	@Test
+	public void assertThat2BCosts45() {
+		String basket = "BB";
+		assertThat(checkout.checkout(basket), equalTo(45));
+	}
 }
+
 
