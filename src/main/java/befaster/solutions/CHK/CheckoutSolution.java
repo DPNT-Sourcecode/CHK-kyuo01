@@ -43,7 +43,7 @@ public class CheckoutSolution {
     }
     
     private int calculateItemLevelDiscountForA(int countA) {
-    	if (countA>=5) {
+    	if (countA>=5 && countA%3==0) {
     		int multiplier = countA / 5;
     		return (50 * multiplier);
     	}
@@ -65,7 +65,7 @@ public class CheckoutSolution {
     private int calculateItemLevelDiscountForEAndB(int countB, int countE) {
     	if (countE>=2) {
     		int multiplier = countE / 2;
-    		if (countB > multiplier || countB == multiplier) {
+    		if (countB >= multiplier) {
     			return multiplier * 30;
     		} else {
     			return countB * 30;
@@ -74,6 +74,7 @@ public class CheckoutSolution {
     	return 0;
     }
 }
+
 
 
 

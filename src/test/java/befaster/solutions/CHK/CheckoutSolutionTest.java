@@ -52,9 +52,9 @@ public class CheckoutSolutionTest {
 	}
 
 	@Test
-	public void assertThat6ACosts260() {
+	public void assertThat6ACosts250() {
 		String basket = "AAAAAA";
-		assertThat(checkout.checkout(basket), equalTo(260));
+		assertThat(checkout.checkout(basket), equalTo(250));
 	}
 	
 	@Test
@@ -93,5 +93,6 @@ public class CheckoutSolutionTest {
 		assertThat(checkout.checkout(basket), equalTo(110));
 	}
 }
+
 
 
