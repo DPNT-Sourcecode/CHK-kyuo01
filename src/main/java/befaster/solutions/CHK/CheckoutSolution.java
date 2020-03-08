@@ -27,15 +27,18 @@ public class CheckoutSolution {
     	}
     	
     	if (countA>=3) {
-    		total-=20;
+    		int multiplier = countA / 3;
+    		total=(total - (20 * multiplier));
     	}
     	if (countB>=2) {
-    		total-=15;
+    		int multiplier = countB / 2;
+    		total = total - (15 * multiplier);
     	}
     	
         return total;
     }
 }
+
 
 
 

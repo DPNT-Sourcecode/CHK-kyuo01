@@ -44,6 +44,19 @@ public class CheckoutSolutionTest {
 		String basket = "BB";
 		assertThat(checkout.checkout(basket), equalTo(45));
 	}
+
+	@Test
+	public void assertThat6ACosts260() {
+		String basket = "AAAAAA";
+		assertThat(checkout.checkout(basket), equalTo(260));
+	}
+	
+	@Test
+	public void assertThat4BCosts90() {
+		String basket = "BBBB";
+		assertThat(checkout.checkout(basket), equalTo(90));
+	}
 }
+
 
 
